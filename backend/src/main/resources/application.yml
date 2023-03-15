@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: demo
+  datasource:
+#    type: com.zaxxer.hikari.HikariDataSource
+#    demo:
+#      driver-class-name: org.mariadb.jdbc.Driver
+#      url: jdbc:mariadb://192.168.1.240:3306/demo?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+#      username: adfilex
+#      password: Adfilex#2019
+
+#    hikari:
+#      pool-name: Hikari
+#      auto-commit: false
+##      maximum-pool-size: 2
+#      data-source-properties:
+#        cachePrepStmts: true
+#        prepStmtCacheSize: 250
+#        prepStmtCacheSqlLimit: 2048
+#        useServerPrepStmts: true
+    jpa:
+      show-sql: false
+      hibernate:
+        ddl-auto: none
+        event:
+          merge:
+            entity_copy_observer: allow
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mysql://demomysql:3306/demo?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+#    url: jdbc:mysql://192.168.1.240:3310/demo?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    username: adfilex
+    password: Adfilex#2019
+
+server:
+  port: 9091
+

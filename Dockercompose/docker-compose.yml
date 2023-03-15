@@ -1,0 +1,28 @@
+version: '3.3'
+services:
+    ### MYSQL Conteiner
+    demomysql:
+        build:
+            context: .
+            args:
+                - MYSQL_DATABASE=${MYSQL_DATABASE}
+                - MYSQL_USER=${MYSQL_USER}
+                - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+                - MYSQL_ROOT_PASSWORD="Root@123"
+        ports:
+            - ${MYSQL_PORT}:3306
+        networks:
+            - test-network
+    demobackend:
+        build:
+            context: ../business/
+        ports:
+            - 9091:9091
+        networks:
+            - test-network
+        depends_on:
+            demomysql:
+                condition: service_started
+networks:
+    test-network:
+        
